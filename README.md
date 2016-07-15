@@ -1,23 +1,20 @@
-# angular-boilerplate
-enterprise seed for an enterprise level angular app.
-
-An opinionated kickstarter for [AngularJS](http://angularjs.org) projects.
+# Insta-Map
+[AngularJS](http://angularjs.org) app to fetch instagram images according to coordinates
 
 ## Quick Start
 
 Install Node.js and then:
 
-- git clone git@github.com:n-sikka/angular-boilerplate.git
-- cd angular-boilerplate
+- git clone https://github.com/n-sikka/insta-map.git
+- cd insta-map
 - sudo npm -g install gulp bower
-- npm install
-- bower install
+- npm install && bower install
 - gulp serve
 
 App will be live on localhost:3000
 
 # Tools used
-- Gulp
-- NPM
-- Bower
-- LiveReload
+- Gulp to build
+- NPM for major package management
+- Bower app level package management
+- LiveReload to reflect sass changes on browser without having to refresh
