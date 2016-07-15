@@ -1,8 +1,10 @@
-<div class="container-fluid text-center">
+<div class="container-fluid text-center" ng-init="vm.initMap()">
 
   <h1>Welcome!</h1>
   <h3>Choose a place to get lat/long</h3>
 
   <div id="g-map"></div>
+
+  <button class="btn btn-default" ng-click="vm.logPos()">Show Marker Position</button>
 
 </div>

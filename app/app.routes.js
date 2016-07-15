@@ -3,9 +3,10 @@
 
   angular
     .module('ng-app')
-    .config(routerConfig);
+    .config(configure);
 
-  function routerConfig($stateProvider, $urlRouterProvider) {
+  function configure($stateProvider, $urlRouterProvider) {
+
     var _dirPath = 'app/views/app/';
 
     $urlRouterProvider.otherwise('/');
