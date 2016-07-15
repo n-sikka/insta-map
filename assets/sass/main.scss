@@ -2,3 +2,9 @@
 @import 'settings/_variables';
 @import 'settings/_settings';
 @import 'settings/_mixins';
+
+#g-map {
+  height: 25rem;
+  width: 100%;
+  margin: 5rem 0 5rem 0;
+}

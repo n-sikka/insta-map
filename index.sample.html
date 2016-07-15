@@ -30,6 +30,16 @@
 
     <div ui-view></div>
 
+    <script>
+      function initMap() {
+        var mapDiv = document.getElementById('g-map');
+        var map = new google.maps.Map(mapDiv, {
+            center: {lat: 44.540, lng: -78.546},
+            zoom: 8
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBBvca_waK7tTFJo4P3cw0nTEeMFixtMI"></script>
     <!-- inject:js -->
     <!-- endinject -->
 
