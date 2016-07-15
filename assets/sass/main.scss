@@ -2,17 +2,3 @@
 @import 'settings/_variables';
 @import 'settings/_settings';
 @import 'settings/_mixins';
-
-h1 {
-  color: $settings;
-  font-size: 100px;
-}
-
-h2 {
-  color: $variable;
-  font-size: 50px;
-}
-
-h3 {
-  color: red;
-}

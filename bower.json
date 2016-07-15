@@ -1,13 +1,13 @@
 {
-  "name": "symptum-app",
-  "description": "symptum main app",
+  "name": "ng-app",
+  "description": "ng-app boilerplate",
   "main": "server.js",
   "authors": [
-    "symptum"
+    "nikhil"
   ],
   "license": "ISC",
   "keywords": [
-    "symptum"
+    "ng-app"
   ],
   "homepage": "index.html",
   "ignore": [

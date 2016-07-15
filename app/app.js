@@ -1,3 +1,10 @@
-angular.module('symptum', [
-  'ui.bootstrap'
-])
+(function() {
+  'use strict';
+
+  angular
+    .module('ng-app', [
+      'ui.bootstrap',
+      'ui.router'
+    ])
+
+})();
