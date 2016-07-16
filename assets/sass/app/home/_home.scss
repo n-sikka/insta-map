@@ -1,0 +1,25 @@
+.loadmore {
+  a {
+      cursor: pointer;
+  }
+  .loadmore-img {
+    opacity: 0.5;
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+  }
+  .loadmore-caption {
+    opacity: 1;
+    color: #282828;
+    position: absolute;
+    left: 0;
+    bottom: 45%;
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+  }
+
+}

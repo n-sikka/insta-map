@@ -16,7 +16,8 @@
         var map = new google.maps.Map(document.getElementById('g-map'), {
           center: {lat: 28.559266, lng: 77.251582},
           zoom: 13,
-          disableDoubleClickZoom: true
+          disableDoubleClickZoom: false,
+					scrollwheel: false
         })
 
         // Try HTML5 geolocation.

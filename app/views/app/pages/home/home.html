@@ -5,9 +5,22 @@
 
   <div id="g-map"></div>
 
-  <button class="btn btn-default" ng-click="vm.getToken()">Get Insta Token</button>
-  <button class="btn btn-default" ng-click="vm.getData()">Get Insta Data</button>
+  <button class="btn btn-default" ng-if="!vm.token" ng-click="vm.getToken()">Get Insta Token</button>
+  <button class="btn btn-default" ng-click="vm.getData()">Get Location Data</button>
+  <button class="btn btn-default" ng-click="vm.getUserImages()">Get My Data</button>
 
-   <div id="instafeed"></div>
+  <div class="instafeed" ng-init="vm.getUserImages()">
+    <div class="images" ng-repeat="item in vm.images | limitTo: vm.limit">
+      <img ng-src="{{item.images.standard_resolution.url}}" alt="{{item.images.standard_resolution.url}}" class="thumbnail col-md-2"/>
+    </div>
+    <div class="col-md-2 thumbnail loadmore" ng-if="vm.limit<20">
+      <a ng-click="vm.limit=20">
+        <span class="loadmore-caption">Load More</span>
+        <img class="loadmore-img" ng-src="{{vm.decoy.images.standard_resolution.url}}" alt="{{vm.decoy.images.standard_resolution.url}}" class="thumbnail col-md-2"/>
+      </a>
+    </div>
+
+    {{limit}}
+  </div>
 
 </div>

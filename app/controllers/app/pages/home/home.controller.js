@@ -37,14 +37,12 @@
 
         //check for duplicaate infoWindow instance
         if(infoWindow){
-          console.log(vm.token);
           infoWindow.setPosition(e.latLng);
           InstagramService.getLocId(e.latLng, vm.token)
           .then(function(response) {
             infoWindow.setContent(response.data.data[0].name);
           });
         }else {
-          console.log(vm.token);
           infoWindow = new google.maps.InfoWindow({map: map});
           infoWindow.setPosition(e.latLng);
 
@@ -72,7 +70,7 @@
         .then(function(response){
           console.log(response.data);
           vm.id = response.data.data[2].id;
-          
+
           //if successfull then get information
           $http.jsonp("https://api.instagram.com/v1/locations/" + vm.id + "/media/recent?access_token="+ vm.token + "&callback=JSON_CALLBACK")
           .then(function(response) {
@@ -83,7 +81,16 @@
     }
 
 
+    vm.getUserImages = function (){
+      InstagramService.getUserImages().then(function(response) {
+        console.log(response.data);
+        vm.images = response.data.data;
+        vm.decoy = response.data.data[11];
+        vm.limit = 11;
+      })
+    }
 
+    //end of controller
   }
 
 

@@ -14,9 +14,11 @@
             "&redirect_uri=" + $location.absUrl().split('#')[0] +
             "&response_type=token", "igPopup");
       },
-      getLocId: function(coordinates, token) {
-        return $http.jsonp("https://api.instagram.com/v1/locations/search?lat="+ coordinates.lat() +"&lng="+ coordinates.lng() +"&access_token="+ token + "&callback=JSON_CALLBACK")
-
+      getLocId: function(coordinates) {
+        return $http.jsonp("https://api.instagram.com/v1/locations/search?lat="+ coordinates.lat() +"&lng="+ coordinates.lng() +"&access_token="+ localStorage.getItem('token') + "&callback=JSON_CALLBACK")
+      },
+      getUserImages: function(token) {
+        return $http.jsonp("https://api.instagram.com/v1/users/self/media/recent/?access_token="+ localStorage.getItem('token') + "&callback=JSON_CALLBACK")
       }
     }
 
