@@ -18,7 +18,7 @@
           zoom: 13,
           disableDoubleClickZoom: false,
 					scrollwheel: false
-        })
+        })		
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {

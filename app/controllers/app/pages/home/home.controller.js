@@ -72,10 +72,12 @@
         InstagramService.getLocId(MapService.getPos(), vm.token)
         .then(function(response){
           console.log(response.data);
+
+          //fetching one id from the list
           vm.id = response.data.data[2].id;
 
           //if successfull then get information
-          $http.jsonp("https://api.instagram.com/v1/locations/" + vm.id + "/media/recent?access_token="+ vm.token + "&callback=JSON_CALLBACK")
+          InstagramService.getLocData(vm.id)
           .then(function(response) {
             console.log(response.data);
           })

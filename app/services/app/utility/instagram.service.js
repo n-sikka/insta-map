@@ -29,6 +29,12 @@
           url: INSTA.GET_LOC_ID + "?lat=" + coordinates.lat() +"&lng="+ coordinates.lng() + "&access_token="+ localStorage.getItem('token') + "&callback=JSON_CALLBACK"
         })
       },
+			getLocData: function(id) {
+				return $http({
+					method: 'JSONP',
+					url: "https://api.instagram.com/v1/locations/" + id + "/media/recent?access_token="+ localStorage.getItem('token') + "&callback=JSON_CALLBACK"
+				})
+			},
       getUserImages: function(token) {
         return $http({
           method: 'JSONP',

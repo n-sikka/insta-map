@@ -4,18 +4,15 @@
       <span ng-if="vm.authorized">
         <h1>Welcome, Mr. {{vm.user}}</h1>
         <h3>Choose a place to get started!</h3>
-
-        <span class="slant-div"></span>
       </span>
 
       <span ng-if="!vm.authorized">
         <h2>Search Instagram by Location now!</h2>
         <h3>Please Login to continue</h3>
-
-        <span class="slant-div"></span>
       </span>
 
       <span ng-init="vm.initMap()">
+        <input id="pac-input" class="controls" type="text" placeholder="Search Location">
         <div id="g-map"></div>
       </span>
 
@@ -32,6 +29,10 @@
       </span>
 
   </div>
+
+  <h3>This div is so edgy, and not so straight!</h3>
+  <span class="slant-div"></span> <br> <br>
+
 
   <div class="instafeed" ng-init="vm.getUserImages()">
     <div class="images" ng-repeat="item in vm.images | limitTo: vm.limit">
