@@ -1,3 +1,16 @@
+.ng-jumbotron {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+  .ng-btn {
+    @include btn-styles($brand-color);
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: none;
+    border: none;
+  }
+}
+
 .loadmore {
   a {
       cursor: pointer;

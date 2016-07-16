@@ -29,7 +29,7 @@
           }
         }
       })
-      .state('access_token', {
+      .state('oAccessToken', {
         url: '/access_token=:token:scope',
         controller: function($rootScope, $stateParams) {
           localStorage.setItem('token', $stateParams.token);

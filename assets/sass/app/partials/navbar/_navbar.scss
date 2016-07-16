@@ -13,4 +13,14 @@
       text-decoration: none;
     }
   }
+
+  .userbar {
+    li {
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent;
+      }
+    }
+  }
 }

@@ -13,7 +13,13 @@
 
     var infoWindow;
 
+    vm.user = localStorage.getItem('username');
 
+    if(localStorage.getItem('token')) {
+      vm.authorized = true;
+    }else {
+      vm.authorized = false;
+    }
     //instagram access token
     vm.token;
     if(vm.token) {
@@ -83,7 +89,6 @@
 
     vm.getUserImages = function (){
       InstagramService.getUserImages().then(function(response) {
-        console.log(response.data);
         vm.images = response.data.data;
         vm.decoy = response.data.data[11];
         vm.limit = 11;

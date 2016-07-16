@@ -1,9 +1,10 @@
-<nav class="navbar navbar-static-top ng-navbar">
-  <div class="navbar-container">
-
-    <div class="col-xs-8">
+<nav class="navbar navbar-fixed-top ng-navbar">
+    <div class="navbar-header">
       <a href="" class="brand">Company</a>
     </div>
 
-  </div>
+    <ul class="nav navbar-right userbar">
+      <li><a href ng-click="vm.login()" ng-if="!vm.authorized">Login</a></li>
+      <li><a href ng-click="vm.logout()" ng-if="vm.authorized">Logout</a></li>
+    </ul>
 </nav>

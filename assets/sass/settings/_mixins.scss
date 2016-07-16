@@ -1,0 +1,37 @@
+@mixin btn-styles($btn-color) {
+
+  background-color: $btn-color;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: none;
+
+  &:hover,
+  &:focus  {
+    outline: none!important;
+    background-color: darken($btn-color, 12%);
+    background-position: 0 -15px;
+    color: #fff;
+  }
+
+  &:active,
+  &.active {
+  	outline: none!important;
+    background-color: darken($btn-color, 12%);
+    border-color: darken($btn-color, 14%);
+    color: #fff;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: darken($btn-color, 12%);
+      background-image: none;
+    }
+  }
+}

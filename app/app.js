@@ -6,14 +6,18 @@
       'ui.bootstrap',
       'ui.router'
     ])
-    .run(function(){
+    .run(function(InstagramService){
+
+      // Check if User is Authenticated or not
       if(!localStorage.getItem('token')) {
         window.open('https://www.instagram.com/oauth/authorize/?client_id=c57f14bc16d840288f3c178eddef1f66&redirect_uri=http://localhost:3000/&response_type=token&scope=public_content'
                     ,'_self');
-        console.log('no Token');
       }else {
-        console.log('token exits');
+        InstagramService.getUser().then(function(response) {
+          localStorage.setItem('username', response.data.data.username);
+        });
       }
+
     })
 
 })();

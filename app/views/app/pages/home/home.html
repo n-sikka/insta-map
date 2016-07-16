@@ -1,13 +1,20 @@
 <div class="container-fluid text-center" ng-init="vm.initMap()">
 
-  <h1>Welcome!</h1>
-  <h3>Choose a place to get lat/long</h3>
+  <div class="jumbotron ng-jumbotron">
+    <div ng-if="vm.authorized">
+      <h1>Welcome! {{vm.user}}</h1>
+      <h3>Choose a place to get started!</h3>
+    </div>
+    <div ng-if="!vm.authorized">
+      <h1>Please Login to continue</h1>
+    </div>
+    <div id="g-map"></div>
 
-  <div id="g-map"></div>
+    <button class="btn btn-default ng-btn" ng-click="vm.getData()">Get Location Data</button>
+    <button class="btn btn-default ng-btn" ng-click="vm.getUserImages()">Get My Data</button>
 
-  <button class="btn btn-default" ng-if="!vm.token" ng-click="vm.getToken()">Get Insta Token</button>
-  <button class="btn btn-default" ng-click="vm.getData()">Get Location Data</button>
-  <button class="btn btn-default" ng-click="vm.getUserImages()">Get My Data</button>
+  </div>
+
 
   <div class="instafeed" ng-init="vm.getUserImages()">
     <div class="images" ng-repeat="item in vm.images | limitTo: vm.limit">
@@ -19,8 +26,6 @@
         <img class="loadmore-img" ng-src="{{vm.decoy.images.standard_resolution.url}}" alt="{{vm.decoy.images.standard_resolution.url}}" class="thumbnail col-md-2"/>
       </a>
     </div>
-
-    {{limit}}
   </div>
 
 </div>
