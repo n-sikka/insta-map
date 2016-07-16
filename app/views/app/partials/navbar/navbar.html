@@ -1,10 +1,22 @@
 <nav class="navbar navbar-fixed-top ng-navbar">
+
+  <div class="container-fluid">
+
     <div class="navbar-header">
-      <a href="" class="brand">Company</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+        <span class="sr-only">Menu</span>
+        <i class="fa fa-bars"></i>
+      </button>
+      <a href="" class="brand">InstaMap</a>
     </div>
 
-    <ul class="nav navbar-right userbar">
-      <li><a href ng-click="vm.login()" ng-if="!vm.authorized">Login</a></li>
-      <li><a href ng-click="vm.logout()" ng-if="vm.authorized">Logout</a></li>
-    </ul>
+    <div class="collapse navbar-collapse" id="collapse">
+      <ul class="nav navbar-right userbar">
+        <li><a href ng-click="vm.login()" ng-if="!vm.authorized">Login</a></li>
+        <li><a href ng-click="vm.logout()" ng-if="vm.authorized">Logout</a></li>
+      </ul>
+    </div>
+
+  </div>
+
 </nav>

@@ -1,31 +1,47 @@
-<div class="container-fluid text-center" ng-init="vm.initMap()">
+<div class="container-fluid text-center">
+  <div class="jumbotron ng-jumbotron" >
 
-  <div class="jumbotron ng-jumbotron">
-    <div ng-if="vm.authorized">
-      <h1>Welcome! {{vm.user}}</h1>
-      <h3>Choose a place to get started!</h3>
-    </div>
-    <div ng-if="!vm.authorized">
-      <h1>Please Login to continue</h1>
-    </div>
-    <div id="g-map"></div>
+      <span ng-if="vm.authorized">
+        <h1>Welcome, Mr. {{vm.user}}</h1>
+        <h3>Choose a place to get started!</h3>
 
-    <button class="btn btn-default ng-btn" ng-click="vm.getData()">Get Location Data</button>
-    <button class="btn btn-default ng-btn" ng-click="vm.getUserImages()">Get My Data</button>
+        <span class="slant-div"></span>
+      </span>
+
+      <span ng-if="!vm.authorized">
+        <h2>Search Instagram by Location now!</h2>
+        <h3>Please Login to continue</h3>
+      </span>
+
+      <span ng-init="vm.initMap()">
+        <div id="g-map"></div>
+      </span>
+
+      <span ng-if="vm.authorized">
+        <button class="btn btn-default ng-btn" ng-click="vm.getData()">Get Location Data</button>
+        <button class="btn btn-default ng-btn" ng-click="vm.getUserImages()">Get My Data</button>
+      </span>
+
+      <span ng-if="!vm.authorized">
+          <!-- <button class="btn btn-default ng-btn" ng-click="vm.login()">Login using Instagram</button> -->
+          <a class="btn-instagram" href="#" ng-click="vm.login()">
+            <b>Sign in</b> with Instagram
+        	</a>
+      </span>
 
   </div>
 
-
   <div class="instafeed" ng-init="vm.getUserImages()">
     <div class="images" ng-repeat="item in vm.images | limitTo: vm.limit">
-      <img ng-src="{{item.images.standard_resolution.url}}" alt="{{item.images.standard_resolution.url}}" class="thumbnail col-md-2"/>
+      <img ng-src="{{item.images.standard_resolution.url}}" alt="{{item.images.standard_resolution.url}}" class="thumbnail col-md-2 col-sm-6 col-xs-12"/>
     </div>
-    <div class="col-md-2 thumbnail loadmore" ng-if="vm.limit<20">
+    <div class="col-md-2 col-sm-6 col-xs-12 thumbnail loadmore" ng-if="vm.limit<20">
       <a ng-click="vm.limit=20">
         <span class="loadmore-caption">Load More</span>
         <img class="loadmore-img" ng-src="{{vm.decoy.images.standard_resolution.url}}" alt="{{vm.decoy.images.standard_resolution.url}}" class="thumbnail col-md-2"/>
       </a>
     </div>
   </div>
+
 
 </div>

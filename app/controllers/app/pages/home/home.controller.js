@@ -11,15 +11,19 @@
     //get an instance of the map in our app.
     var map = MapService.init();
 
+    //this is the marker detail window
     var infoWindow;
 
     vm.user = localStorage.getItem('username');
 
+    //set auth flag for ui/ux
     if(localStorage.getItem('token')) {
       vm.authorized = true;
     }else {
       vm.authorized = false;
     }
+
+
     //instagram access token
     vm.token;
     if(vm.token) {
@@ -27,13 +31,6 @@
     }else {
       vm.token = localStorage.getItem('token');
     }
-
-    vm.getToken = function() {
-      window.open('https://www.instagram.com/oauth/authorize/?client_id=c57f14bc16d840288f3c178eddef1f66&redirect_uri=http://localhost:3000/&response_type=token&scope=public_content'
-      ,'_self');
-    }
-
-
 
     vm.initMap = function() {
       map.addListener('click', function(e) {
@@ -93,6 +90,13 @@
         vm.decoy = response.data.data[11];
         vm.limit = 11;
       })
+    }
+
+    vm.getByLoc = function() {
+      InstagramService.getMediaByLoc(MapService.getPos())
+      .then(function(response) {
+        console.log(response.data)
+      });
     }
 
     //end of controller

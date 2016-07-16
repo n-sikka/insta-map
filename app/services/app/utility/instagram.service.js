@@ -33,7 +33,19 @@
           method: 'JSONP',
           url: "https://api.instagram.com/v1/users/self/media/recent/?access_token="+ localStorage.getItem('token') + "&callback=JSON_CALLBACK"
         })
-      }
+      },
+			getPopularImages: function() {
+				return $http({
+					method: 'JSONP',
+					url: "https://api.instagram.com/v1/media/popular?access_token="+ localStorage.getItem('token') + "&callback=JSON_CALLBACK"
+				})
+			},
+			getMediaByLoc: function(coordinates) {
+				return $http({
+					method: 'JSONP',
+					url: "https://api.instagram.com/v1/media/search?lat=" + coordinates.lat() +"&lng="+ coordinates.lng() + "&distance=5000&access_token="+ localStorage.getItem('token') + "&callback=JSON_CALLBACK"
+				})
+			}
     }
 
   }
