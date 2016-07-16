@@ -22,12 +22,10 @@
       },
       save: function(obj){
         coordinates = obj;
+        // console.log("coordinates--> " + coordinates);
       },
       getPos: function() {
         return coordinates;
-      },
-      setPos: function() {
-        
       }
     }
 

@@ -28,6 +28,19 @@
             controllerAs:'vm'
           }
         }
+      })
+      .state('access_token', {
+        url: '/access_token=:token:scope',
+        controller: function($rootScope, $stateParams) {
+          $rootScope.token = $stateParams.token;
+        },
+        resolve: {
+          location: [
+              '$location',
+               function ($location) {
+                $location.path('/');
+          }]
+        }
       });
 
   }
