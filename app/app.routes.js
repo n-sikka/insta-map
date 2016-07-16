@@ -32,7 +32,7 @@
       .state('access_token', {
         url: '/access_token=:token:scope',
         controller: function($rootScope, $stateParams) {
-          $rootScope.token = $stateParams.token;
+          localStorage.setItem('token', $stateParams.token);
         },
         resolve: {
           location: [
